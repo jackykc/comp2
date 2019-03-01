@@ -1,0 +1,5 @@
+<launch>
+    
+    <node pkg="comp2" name="detector" type="detect.py" output="screen"></node>
+    <node pkg="rqt_gui" name="rqt_gui" type="rqt_gui"></node>
+</launch>
