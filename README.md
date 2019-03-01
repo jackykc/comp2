@@ -7,13 +7,14 @@ In this competition we demonstrate how a turtlebot can complete a course filled 
 * Kobuki Turtlebot with an Asus Xtion Pro
 * Ubuntu 16.04
 * [ROS Kinetic](http://wiki.ros.org/kinetic/Installation/Ubuntu) (Desktop or Desktop-Full)
-* [Turtlebot](http://wiki.ros.org/action/show/Robots/TurtleBot) and [Kobuki Packages](http://wiki.ros.org/kobuki):
+* [Turtlebot](http://wiki.ros.org/action/show/Robots/TurtleBot), [Kobuki Packages](http://wiki.ros.org/kobuki) and [camera](http://wiki.ros.org/openni_camera)
   ```
   sudo apt-get install ros-kinetic-turtlebot
   sudo apt-get install ros-kinetic-kobuki
   sudo apt-get install ros-kinetic-kobuki-core
+  sudo apt-get install ros-kinetic-openni2-camera
+  sudo apt-get install ros-kinetic-openni2-launch
   ```
-
 
 ## Resources used
 HSV Thresholding
@@ -34,17 +35,15 @@ https://docs.opencv.org/3.1.0/dd/d49/tutorial_py_contour_features.html
 1. Launch the competition node `roslaunch comp2 comp2.launch`
 
 ## Concepts and code
-### Concepts
 
 * State Machine
-INSERT STATEMACHINE HERE
+![alt text](https://raw.githubusercontent.com/jackykc/comp2/master/state_machine.png)
 ```
 1. In the GO state, the turtlebot does line tracking.
 2. Upon seeing a red line, we move to a stop state, incrementing 
    the number of stops it has seen
 3. After stopping, it will then move onto one of the three tasks
    or the finish state after the last red line has been seen
-   the three tasks states are described below
 ```
 * GO (Line Tracking)
   * Convert each frame into HSV format.
