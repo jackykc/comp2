@@ -1,5 +1,9 @@
 <launch>
+    <include file="$(find turtlebot_bringup)/launch/minimal.launch" />
+    <include file="$(find turtlebot_bringup)/launch/3dsensor.launch" />
+    
     <include file="$(find comp2)/launch/include/velocity_smoother.launch.xml"/>
+
     <node pkg="comp2" name="follower" type="follower.py" output="screen"></node>
     <node pkg="rqt_gui" name="rqt_gui" type="rqt_gui"></node>    
 </launch>
