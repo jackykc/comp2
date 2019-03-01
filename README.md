@@ -72,6 +72,7 @@ https://docs.opencv.org/3.1.0/dd/d49/tutorial_py_contour_features.html
 [Thresholding of images by color](https://github.com/jackykc/comp2/blob/master/src/follower.py#L178)
 ``` python
 def detect_3(image):
+    # keep only red
     hsv = cv2.cvtColor(image, cv2.COLOR_BGR2HSV)
     lower_red = numpy.array([0, 205,  38])
     upper_red = numpy.array([180, 255, 125])
@@ -95,7 +96,7 @@ def get_vertices(contours):
         # approximate the contour shape to remove noisy vertices
         peri = cv2.arcLength(largest_contour, True)
         approx = cv2.approxPolyDP(largest_contour, 0.04 * peri, True)
-    return len(approx)
+    return len(approx) # return the sides of the approximated contour
 ```
 Video:
 https://www.youtube.com/watch?v=mmgdHccBFf8
