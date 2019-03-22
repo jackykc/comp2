@@ -70,6 +70,8 @@ https://docs.opencv.org/3.1.0/dd/d49/tutorial_py_contour_features.html
 
 ## Code explanations
 [Thresholding of images by color](https://github.com/jackykc/comp2/blob/master/src/follower.py#L178)
+
+function used for task three, but thresholding for task one and two is the same
 ``` python
 def detect_3(image):
     # keep only red
@@ -84,6 +86,8 @@ def detect_3(image):
     mask_red[:,4*w/5:w] = 0
 ```
 [Get the number of sides on the shape](https://github.com/jackykc/comp2/blob/master/src/follower.py#L241)
+
+function used for both task two and task three for finding the shape
 ``` python
 # this is incorrectly named vertices, when it should be sides instead 
 def get_vertices(contours):
